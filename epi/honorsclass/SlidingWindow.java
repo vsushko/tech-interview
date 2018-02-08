@@ -1,3 +1,5 @@
+package honorsclass;
+
 import com.epi.QueueWithMaxAlternative;
 
 import java.util.Arrays;

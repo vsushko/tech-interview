@@ -1,6 +1,6 @@
+package linkedlists;
+
 // @author Andrey Pavlov
-
-
 public class DeletionList {
   // @include
   // Assumes nodeToDelete is not tail.

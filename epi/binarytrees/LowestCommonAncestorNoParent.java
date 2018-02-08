@@ -1,3 +1,5 @@
+package binarytrees;
+
 import com.epi.BinaryTreePrototypeTemplate.BinaryTreeNode;
 
 public class LowestCommonAncestorNoParent {

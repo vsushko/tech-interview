@@ -1,3 +1,5 @@
+package linkedlists;
+
 public class CyclicRightShift {
   // @include
   public static ListNode<Integer> cyclicallyRightShiftList(ListNode<Integer> L,

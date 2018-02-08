@@ -1,9 +1,11 @@
+package Algorithms.Warmup;
+
 import java.util.Scanner;
 
 /**
  * Created by vsushko on 01.11.2017
  */
-public class Solution {
+public class SolveMeFirst {
 
     static int solveMeFirst(int a, int b) {
         return a + b;

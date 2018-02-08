@@ -1,3 +1,5 @@
+package linkedlists;
+
 public class CheckingCycleAlternative {
   // @include
   public static ListNode<Integer> hasCycle(ListNode<Integer> head) {
