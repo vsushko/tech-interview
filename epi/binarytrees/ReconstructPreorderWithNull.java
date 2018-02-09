@@ -1,11 +1,13 @@
-import com.epi.BinaryTreePrototypeTemplate.BinaryTreeNode;
+package binarytrees;
+
+import common.BinaryTreeNode;
 
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static com.epi.BinaryTreeUtils.generateRandBinaryTree;
+import static common.BinaryTreeUtils.generateRandBinaryTree;
 
 public class ReconstructPreorderWithNull {
   // @include

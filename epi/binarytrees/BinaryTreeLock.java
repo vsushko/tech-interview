@@ -1,3 +1,5 @@
+package binarytrees;
+
 public class BinaryTreeLock {
   // @include
   public static class BinaryTree {

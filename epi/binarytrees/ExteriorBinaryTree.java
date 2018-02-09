@@ -1,4 +1,7 @@
-import com.epi.BinaryTreePrototypeTemplate.BinaryTreeNode;
+package binarytrees;
+
+import common.BinaryTreeNode;
+import common.ReconstructPreOrderWithNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -67,7 +70,7 @@ public class ExteriorBinaryTree {
   private static void simpleTest() {
     // The example in the book.
     BinaryTreeNode<Integer> tree
-        = ReconstructPreorderWithNull.reconstructPreorder(Arrays.asList(
+        = ReconstructPreOrderWithNull.reconstructPreOrder(Arrays.asList(
             314, 6, 271, 28, null, null, 0, null, null, 561, null, 3, 17, null,
             null, null, 6, 2, null, 1, 401, null, 641, null, null, 257, null,
             null, 271, null, 28, null, null));

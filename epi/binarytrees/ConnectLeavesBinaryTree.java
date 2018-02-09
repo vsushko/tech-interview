@@ -1,5 +1,6 @@
-import com.epi.BinaryTreePrototypeTemplate.BinaryTreeNode;
+package binarytrees;
 
+import common.BinaryTreeNode;
 import java.util.LinkedList;
 import java.util.List;
 

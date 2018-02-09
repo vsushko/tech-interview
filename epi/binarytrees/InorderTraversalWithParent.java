@@ -1,4 +1,6 @@
-import com.epi.BinaryTreeWithParentPrototype.BinaryTree;
+package binarytrees;
+
+import common.BinaryTreeNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,12 +8,12 @@ import java.util.List;
 
 public class InorderTraversalWithParent {
   // @include
-  public static List<Integer> inorderTraversal(BinaryTree<Integer> tree) {
-    BinaryTree<Integer> prev = null, curr = tree;
+  public static List<Integer> inorderTraversal(BinaryTreeNode<Integer> tree) {
+    BinaryTreeNode<Integer> prev = null, curr = tree;
     List<Integer> result = new ArrayList<>();
 
     while (curr != null) {
-      BinaryTree<Integer> next;
+      BinaryTreeNode<Integer> next;
       if (curr.parent == prev) {
         // We came down to curr from prev.
         if (curr.left != null) { // Keep going left.
@@ -41,26 +43,26 @@ public class InorderTraversalWithParent {
     //      3
     //    2   5
     //  1    4 6
-    BinaryTree<Integer> root = new BinaryTree<>(3, null, null);
+    BinaryTreeNode<Integer> root = new BinaryTreeNode<>(3, null, null);
     root.parent = null;
     List<Integer> result = inorderTraversal(root);
     List<Integer> goldenRes = Arrays.asList(3);
     assert(goldenRes.equals(result));
 
-    root.left = new BinaryTree<>(2, null, null);
+    root.left = new BinaryTreeNode<>(2, null, null);
     root.left.parent = root;
-    root.left.left = new BinaryTree<>(1, null, null);
+    root.left.left = new BinaryTreeNode<>(1, null, null);
     root.left.left.parent = root.left;
 
     result = inorderTraversal(root);
     goldenRes = Arrays.asList(1, 2, 3);
     assert(goldenRes.equals(result));
 
-    root.right = new BinaryTree<>(5, null, null);
+    root.right = new BinaryTreeNode<>(5, null, null);
     root.right.parent = root;
-    root.right.left = new BinaryTree<>(4, null, null);
+    root.right.left = new BinaryTreeNode<>(4, null, null);
     root.right.left.parent = root.right;
-    root.right.right = new BinaryTree<>(6, null, null);
+    root.right.right = new BinaryTreeNode<>(6, null, null);
     root.right.right.parent = root.right;
 
     result = inorderTraversal(root);

@@ -1,4 +1,6 @@
-import com.epi.BinarySearchTreePrototypeTemplate.BSTNode;
+package binarytrees;
+
+import common.BSTNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,9 +1,11 @@
-import com.epi.BinaryTreeWithParentPrototype.BinaryTree;
+package binarytrees;
+
+import common.BinaryTreeNode;
 
 public class Successor {
   // @include
-  public static BinaryTree<Integer> findSuccessor(BinaryTree<Integer> node) {
-    BinaryTree<Integer> iter = node;
+  public static BinaryTreeNode<Integer> findSuccessor(BinaryTreeNode<Integer> node) {
+    BinaryTreeNode<Integer> iter = node;
     if (iter.right != null) {
       // Find the leftmost element in node's right subtree.
       iter = iter.right;
@@ -27,25 +29,25 @@ public class Successor {
     //    3
     //  2   5
     // 1   4 6
-    BinaryTree<Integer> root = new BinaryTree<>(3, null, null);
+    BinaryTreeNode<Integer> root = new BinaryTreeNode<>(3, null, null);
     assert(findSuccessor(root) == null);
-    root.left = new BinaryTree<>(2, null, null);
+    root.left = new BinaryTreeNode<>(2, null, null);
     root.left.parent = root;
     assert(findSuccessor(root.left).data == 3);
 
-    root.left.left = new BinaryTree<>(1, null, null);
+    root.left.left = new BinaryTreeNode<>(1, null, null);
     root.left.left.parent = root.left;
     assert(findSuccessor(root.left).data == 3);
     assert(findSuccessor(root.left.left).data == 2);
 
-    root.right = new BinaryTree<>(5, null, null);
+    root.right = new BinaryTreeNode<>(5, null, null);
     root.right.parent = root;
-    root.right.left = new BinaryTree<>(4, null, null);
+    root.right.left = new BinaryTreeNode<>(4, null, null);
     root.right.left.parent = root.right;
-    root.right.right = new BinaryTree<>(6, null, null);
+    root.right.right = new BinaryTreeNode<>(6, null, null);
     root.right.right.parent = root.right;
     // should output 6
-    BinaryTree<Integer> node = findSuccessor(root.right);
+    BinaryTreeNode<Integer> node = findSuccessor(root.right);
     assert(node.data.equals(6));
     System.out.println(node.data);
     // should output "null"
