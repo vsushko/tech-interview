@@ -1,15 +1,22 @@
-package CtCILibrary;
+package CtCILibrary.CtCILibrary;
 
 public class LinkedListNode {
 	public LinkedListNode next;
 	public LinkedListNode prev;
 	public LinkedListNode last;
 	public int data;
+
+	public LinkedListNode(LinkedListNode next, int data) {
+		this.next = next;
+		this.data = data;
+	}
+
 	public LinkedListNode(int d, LinkedListNode n, LinkedListNode p) {
 		data = d;
 		setNext(n);
 		setPrevious(p);
 	}
+
 	
 	public LinkedListNode(int d) {
 		data = d;

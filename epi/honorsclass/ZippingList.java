@@ -4,7 +4,7 @@ import common.ListNode;
 
 import java.util.Random;
 
-import static com.epi.ReverseLinkedListIterative.reverseLinkedList;
+import static common.ReverseLinkedListIterative.reverseLinkedList;
 
 public class ZippingList {
     // @include

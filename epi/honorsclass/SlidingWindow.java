@@ -1,6 +1,6 @@
 package honorsclass;
 
-import com.epi.QueueWithMaxAlternative;
+import stacksandqueues.QueueWithMaxAlternative;
 
 import java.util.ArrayList;
 import java.util.Arrays;

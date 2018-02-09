@@ -5,8 +5,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-import static com.epi.LargestRectangleUnderSkyline.calculateLargestRectangle;
-import static com.epi.MaxSubmatrixRectangleBruteForce.maxRectangleSubmatrixBruteForce;
+import static common.LargestRectangleUnderSkyline.calculateLargestRectangle;
+import static common.MaxSubmatrixRectangleBruteForce.maxRectangleSubmatrixBruteForce;
 
 public class MaxSubmatrixRectangleImproved {
     // @include

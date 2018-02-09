@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static com.epi.MaxSubmatrixRectangleBruteForce.maxRectangleSubmatrixBruteForce;
+import static common.MaxSubmatrixRectangleBruteForce.maxRectangleSubmatrixBruteForce;
 
 public class MaxSubmatrixRectangle {
     // @include
