@@ -1,3 +1,7 @@
+package linkedlists;
+
+import common.ListNode;
+
 import java.util.Random;
 
 public class SearchList {

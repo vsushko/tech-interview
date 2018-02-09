@@ -1,5 +1,7 @@
 package linkedlists;
 
+import common.ListNode;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;

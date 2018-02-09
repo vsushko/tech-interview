@@ -1,3 +1,5 @@
+package concurrentprogramming;
+
 public class LockOrderingWorks {
   static class Account {
     private int balance;
