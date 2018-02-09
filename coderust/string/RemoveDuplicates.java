@@ -8,6 +8,7 @@ public class RemoveDuplicates {
     public static void main(String[] args) {
         String test = "abbabcddbabcdeedebc\0";
         System.out.println(removeDuplicates1(test.toCharArray()));
+        System.out.println(removeDuplicates2(test.toCharArray()));
     }
 
     // this solution uses extra memory
@@ -32,5 +33,35 @@ public class RemoveDuplicates {
         str[writeIndex] = '\0';
 
         return hashSet;
+    }
+
+
+    private static char[] removeDuplicates2(char[] str) {
+        // this solution does not require any extra memory but runs in O(n^2)
+
+        // Null terminating string are not used in Java. For this question,
+        // assume that you are passed a null terminated string (array of characters).
+        if (str == null || str.length == 0) {
+            return new char[]{};
+        }
+
+        int writeIndex = 0;
+        
+        for (int i = 0; i < str.length; i++) {
+            boolean found = false;
+
+            for (int j = 0; j < writeIndex; j++) {
+                if (str[i] == str[j]) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                str[writeIndex] = str[i];
+                writeIndex++;
+            }
+        }
+        str[writeIndex] = '\0';
+        return str;
     }
 }
