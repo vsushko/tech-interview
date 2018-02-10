@@ -84,7 +84,7 @@ public class ReverseWordsInASentence {
         StringBuilder res = new StringBuilder();
 
         for (int i = (words.length - 1); i > 0; i--) {
-            res.append(words[i].intern()).append(" ");
+            res.append(words[i]).append(' ');
         }
 
         res.append(words[0]);
