@@ -2,6 +2,8 @@ package linkedlist;
 
 import common.LinkedListNode;
 
+import static utilities.CodeRustUtils.printLinkedList;
+
 public class ReverseASinglyLinkedList {
 
     public static void main(String[] args) {
@@ -16,19 +18,6 @@ public class ReverseASinglyLinkedList {
 
         reversed = reverseRecursive(node4);
         printLinkedList(reversed);
-    }
-
-    private static void printLinkedList(LinkedListNode reversed) {
-        StringBuilder stringBuilder = new StringBuilder();
-        LinkedListNode current = reversed;
-        while (current != null) {
-            stringBuilder.append(current.data);
-            if (current.next != null) {
-                stringBuilder.append("->");
-            }
-            current = current.next;
-        }
-        System.out.println(stringBuilder.toString());
     }
 
     private static LinkedListNode reverseIterative(LinkedListNode head) {
