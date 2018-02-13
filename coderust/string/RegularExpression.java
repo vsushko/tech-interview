@@ -12,9 +12,9 @@ public class RegularExpression {
         System.out.println("Pattern: " + pattern + ": " + regxMatch(text, pattern));
         pattern = "aab*e*cd*a";
         System.out.println("Pattern: " + pattern + ": " + regxMatch(text, pattern));
-        pattern= "a*b*c*d*a*";
+        pattern = "a*b*c*d*a*";
         System.out.println("Pattern: " + pattern + ": " + regxMatch(text, pattern));
-        pattern= ".*b*c*d*a*";
+        pattern = ".*b*c*d*a*";
         System.out.println("Pattern: " + pattern + ": " + regxMatch(text, pattern));
         pattern = "aabbbbbcdda";
         System.out.println("Pattern: " + pattern + ": " + regxMatch(text, pattern));
@@ -70,5 +70,32 @@ public class RegularExpression {
 
     static boolean regxMatch(String text, String pattern) {
         return regxMatchRec(text, pattern);
+    }
+
+    private static boolean match(String text, String pattern, int i, int j) {
+        if (text.length() == i && pattern.length() == j) {
+            return true;
+        }
+        if (j < pattern.length() - 1 && pattern.charAt(j + 1) == '*') {
+            for (int k = i; k <= text.length(); k++) {
+                if (match(text, pattern, k, j + 2)) {
+                    return true;
+                }
+                if (k >= text.length()) {
+                    return false;
+                }
+                if (pattern.charAt(j) != '.' && text.charAt(k) != pattern.charAt(j)) {
+                    return false;
+                }
+            }
+        } else if (i < text.length() && j < pattern.length()
+                && (pattern.charAt(j) == '.' || pattern.charAt(j) == text.charAt(i))) {
+            return match(text, pattern, i + 1, j + 1);
+        }
+        return false;
+    }
+
+    public static boolean match(String text, String pattern) {
+        return match(text, pattern, 0, 0);
     }
 }
