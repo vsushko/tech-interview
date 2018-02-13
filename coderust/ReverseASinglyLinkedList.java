@@ -10,7 +10,13 @@ public class ReverseASinglyLinkedList {
         LinkedListNode<Integer> node1 = new LinkedListNode<>(7, node2);
 
         LinkedListNode reversed = reverseIterative(node1);
+        printLinkedList(reversed);
 
+        reversed = reverseRecursive(node4);
+        printLinkedList(reversed);
+    }
+
+    private static void printLinkedList(LinkedListNode reversed) {
         StringBuilder stringBuilder = new StringBuilder();
         LinkedListNode current = reversed;
         while (current != null) {
@@ -42,7 +48,18 @@ public class ReverseASinglyLinkedList {
 
             reversedList = temp;
         }
+        return reversedList;
+    }
 
+    private static LinkedListNode reverseRecursive(LinkedListNode head) {
+        // no need to reverse if head is null or there is only 1 node
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        LinkedListNode reversedList = reverseRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
         return reversedList;
     }
 }
