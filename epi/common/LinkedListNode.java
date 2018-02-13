@@ -7,11 +7,14 @@ package common;
  */
 public class LinkedListNode<T> {
 
-    //An instance variable representing data stored in this node
-    protected T data;
-
     //An instance variable representing the next node in the linked list
-    protected LinkedListNode<T> next;
+    public LinkedListNode<T> next;
+    //An instance variable representing data stored in this node
+    public T data;
+
+    public LinkedListNode(T data) {
+        this.data = data;
+    }
 
     /**
      * Constructor of the linked list node
@@ -22,34 +25,6 @@ public class LinkedListNode<T> {
     public LinkedListNode(T data, LinkedListNode<T> next) {
         this.data = data;
         this.next = next;
-    }
-
-    /**
-     * Get the data stored at this node.
-     */
-    public T getData() {
-        return data;
-    }
-
-    /**
-     * Set the data stored at this node.
-     */
-    public void setData(T data) {
-        this.data = data;
-    }
-
-    /**
-     * Get (pointer to) next node.
-     */
-    public LinkedListNode<T> getNext() {
-        return next;
-    }
-
-    /**
-     * Set the next pointer to passed node.
-     */
-    public void setNext(LinkedListNode<T> node) {
-        this.next = node;
     }
 
     /**
