@@ -1,7 +1,7 @@
 package linkedlist;
 
 import common.LinkedListNode;
-import utilities.CodeRustUtils;
+import utilities.LinkedListUtils;
 
 public class DeleteNodeWithAGivenKey {
 
@@ -13,10 +13,10 @@ public class DeleteNodeWithAGivenKey {
         LinkedListNode<Integer> node2 = new LinkedListNode<>(14, node3);
         LinkedListNode<Integer> node1 = new LinkedListNode<>(7, node2);
 
-        CodeRustUtils.printLinkedList(node1);
+        LinkedListUtils.printLinkedList(node1);
 
         LinkedListNode<Integer> listWithoutKey = deleteNode(node1, 28);
-        CodeRustUtils.printLinkedList(listWithoutKey);
+        LinkedListUtils.printLinkedList(listWithoutKey);
     }
 
     private static LinkedListNode<Integer> deleteNode(LinkedListNode<Integer> head, int key) {

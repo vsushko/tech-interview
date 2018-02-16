@@ -1,7 +1,7 @@
 package linkedlist;
 
 import common.LinkedListNode;
-import utilities.CodeRustUtils;
+import utilities.LinkedListUtils;
 
 import java.util.HashSet;
 
@@ -15,10 +15,10 @@ public class RemoveDuplicates {
         LinkedListNode<Integer> node2 = new LinkedListNode<>(14, node3);
         LinkedListNode<Integer> node1 = new LinkedListNode<>(7, node2);
 
-        CodeRustUtils.printLinkedList(node1);
+        LinkedListUtils.printLinkedList(node1);
 
         LinkedListNode<Integer> head = removeDuplicates(node1);
-        CodeRustUtils.printLinkedList(head);
+        LinkedListUtils.printLinkedList(head);
     }
 
     private static LinkedListNode<Integer> removeDuplicates(LinkedListNode<Integer> head) {

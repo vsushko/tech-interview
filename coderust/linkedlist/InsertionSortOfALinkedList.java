@@ -1,7 +1,7 @@
 package linkedlist;
 
 import common.LinkedListNode;
-import utilities.CodeRustUtils;
+import utilities.LinkedListUtils;
 
 public class InsertionSortOfALinkedList {
 
@@ -11,10 +11,10 @@ public class InsertionSortOfALinkedList {
         LinkedListNode<Integer> node2 = new LinkedListNode<>(23, node3);
         LinkedListNode<Integer> node1 = new LinkedListNode<>(29, node2);
 
-        CodeRustUtils.printLinkedList(node1);
+        LinkedListUtils.printLinkedList(node1);
 
         LinkedListNode<Integer> head = insertionSort(node1);
-        CodeRustUtils.printLinkedList(head);
+        LinkedListUtils.printLinkedList(head);
     }
 
     private static LinkedListNode<Integer> sortedInsert(LinkedListNode<Integer> head,

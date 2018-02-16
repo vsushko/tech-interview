@@ -2,7 +2,7 @@ package linkedlist;
 
 import common.LinkedListNode;
 
-import static utilities.CodeRustUtils.printLinkedList;
+import static utilities.LinkedListUtils.printLinkedList;
 
 public class ReverseASinglyLinkedList {
 

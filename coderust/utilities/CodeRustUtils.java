@@ -54,17 +54,4 @@ public final class CodeRustUtils {
         }
         return buffer;
     }
-
-    public static void printLinkedList(LinkedListNode reversed) {
-        StringBuilder stringBuilder = new StringBuilder();
-        LinkedListNode current = reversed;
-        while (current != null) {
-            stringBuilder.append(current.data);
-            if (current.next != null) {
-                stringBuilder.append("->");
-            }
-            current = current.next;
-        }
-        System.out.println(stringBuilder.toString());
-    }
 }

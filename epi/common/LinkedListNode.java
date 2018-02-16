@@ -13,4 +13,41 @@ public class LinkedListNode<T> {
         this.next = next;
     }
 
+    void appendToTail(T data) {
+        LinkedListNode<T> node = new LinkedListNode<>(data);
+        LinkedListNode<T> current = this;
+
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = node;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof LinkedListNode && ((LinkedListNode) obj).data == data;
+    }
+
+
+    @Override
+    public int hashCode() {
+        return data.hashCode();
+    }
+
+
+    public String toString() {
+        LinkedListNode node = this;
+
+        StringBuilder sb = new StringBuilder();
+
+        while (node.next != null) {
+            sb.append(node.data);
+            sb.append("->");
+            node = node.next;
+        }
+        sb.append(node.data);
+
+        return sb.toString();
+    }
+
 }
