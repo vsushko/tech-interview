@@ -54,7 +54,7 @@ public class RotateALinkedList {
         }
         int len = findLength(head);
 
-        // if n (number of rotations required) is bigger than length of lined list
+        // if n (number of rotations required) is bigger than length of linked list
         // or if n is negative then we need to adjust total number of rotations needed
         n = adjustRotationsNeeded(n, len);
 
@@ -71,7 +71,7 @@ public class RotateALinkedList {
             rotationsCount--;
             temp = temp.next;
         }
-        // after the above loop temp wil be pointing to one node prior to rotation point
+        // after the above loop temp will be pointing to one node prior to rotation point
         LinkedListNode<Integer> newHead = temp.next;
 
         // set new end of list
