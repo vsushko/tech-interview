@@ -30,7 +30,7 @@ public class MergeSortLinkedList {
         LinkedListUtils.printLinkedList(head);
     }
 
-    public static void splitInHalf(LinkedListNode<Integer> head,
+    private static void splitInHalf(LinkedListNode<Integer> head,
                                    Pair<LinkedListNode<Integer>, LinkedListNode<Integer>> firstSecond) {
         if (head == null) {
             return;
