@@ -30,7 +30,8 @@ public final class LinkedListUtils {
             if (current.next != null) {
                 stringBuilder.append('(').append(current.arbitraryPointer).append(')').append("->");
             } else {
-                stringBuilder.append('(').append(current.arbitraryPointer.data).append(')');
+                stringBuilder.append('(').append(current.arbitraryPointer == null
+                        ? null : current.arbitraryPointer.data).append(')');
             }
             current = current.next;
         }

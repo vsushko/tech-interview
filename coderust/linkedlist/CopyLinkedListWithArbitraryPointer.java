@@ -12,6 +12,10 @@ import java.util.Hashtable;
  * Solution #1:
  * Runtime Complexity: Linear, O(n).
  * Memory Complexity: Linear, O(n).
+ * <p>
+ * Solution #2:
+ * Runtime Complexity: Linear, O(n).
+ * Memory Complexity: Constant, O(1).
  */
 public class CopyLinkedListWithArbitraryPointer {
 
@@ -24,6 +28,9 @@ public class CopyLinkedListWithArbitraryPointer {
         LinkedListUtils.printLinkedList(node1);
 
         LinkedListNodeWithArbitraryPointer<Integer> head = deepCopyArbitraryPointer(node1);
+        LinkedListUtils.printLinkedList(head);
+
+        head = deepCopyArbitraryPointerOpt(node1);
         LinkedListUtils.printLinkedList(head);
     }
 
@@ -66,6 +73,48 @@ public class CopyLinkedListWithArbitraryPointer {
                 newCurrent.arbitraryPointer = node;
             }
             newCurrent = newCurrent.next;
+        }
+        return newHead;
+    }
+
+    private static LinkedListNodeWithArbitraryPointer<Integer> deepCopyArbitraryPointerOpt(
+            LinkedListNodeWithArbitraryPointer<Integer> head) {
+        if (head == null) {
+            return null;
+        }
+        LinkedListNodeWithArbitraryPointer<Integer> current = head;
+
+        // interesting new nodes within the existing linkedlist
+        while (current != null) {
+            LinkedListNodeWithArbitraryPointer<Integer> newNode =
+                    new LinkedListNodeWithArbitraryPointer<>(current.data);
+            newNode.next = current.next;
+            current.next = newNode;
+            current = newNode.next;
+        }
+
+        // setting correct arbitrary pointers
+        current = head;
+        while (current != null) {
+            if (current.arbitraryPointer != null) {
+                current.next.arbitraryPointer = current.arbitraryPointer.next;
+            }
+            current = current.next.next;
+        }
+
+        // separating lists
+        current = head;
+        LinkedListNodeWithArbitraryPointer<Integer> newHead = head.next;
+        LinkedListNodeWithArbitraryPointer<Integer> copiedCurrent = newHead;
+
+        while (current != null) {
+            copiedCurrent = current.next;
+            current.next = copiedCurrent.next;
+
+            if (copiedCurrent.next != null) {
+                copiedCurrent.next = copiedCurrent.next.next;
+            }
+            current = current.next;
         }
         return newHead;
     }
