@@ -1,6 +1,7 @@
 package utilities;
 
 import common.LinkedListNode;
+import common.LinkedListNodeWithArbitraryPointer;
 
 public final class LinkedListUtils {
 
@@ -15,6 +16,21 @@ public final class LinkedListUtils {
             stringBuilder.append(current.data);
             if (current.next != null) {
                 stringBuilder.append("->");
+            }
+            current = current.next;
+        }
+        System.out.println(stringBuilder.toString());
+    }
+
+    public static void printLinkedList(LinkedListNodeWithArbitraryPointer reversed) {
+        StringBuilder stringBuilder = new StringBuilder();
+        LinkedListNodeWithArbitraryPointer current = reversed;
+        while (current != null) {
+            stringBuilder.append(current.data);
+            if (current.next != null) {
+                stringBuilder.append('(').append(current.arbitraryPointer).append(')').append("->");
+            } else {
+                stringBuilder.append('(').append(current.arbitraryPointer.data).append(')');
             }
             current = current.next;
         }
