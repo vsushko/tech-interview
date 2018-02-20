@@ -1,6 +1,7 @@
 package mathandstats;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -8,6 +9,10 @@ import java.util.List;
  * <p>
  * Solution #1:
  * Runtime Complexity: Polynomial, O(n3).
+ * Memory Complexity: Constant, O(1).
+ * <p>
+ * Solution #2:
+ * Runtime Complexity: Quadratic, O(n2).
  * Memory Complexity: Constant, O(1).
  */
 public class PythagoreanTriplets {
@@ -55,6 +60,44 @@ public class PythagoreanTriplets {
                         triplets.add(triplet);
                     }
 
+                }
+            }
+        }
+        return triplets;
+    }
+
+    private static List<int[]> findPythagoreanTriplets2(int[] arr) {
+        int n = arr.length;
+        List<int[]> triplets = new ArrayList<>();
+        Arrays.sort(arr);
+
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == 0) {
+                continue;
+            }
+            int c2 = arr[i] * arr[i];
+            int j = 0;
+            int k = n - 1;
+
+            while (j < k) {
+                if (j == i || arr[j] == 0) {
+                    j += 1;
+                    continue;
+                }
+                if (k == i || arr[k] == 0) {
+                    k -= 1;
+                    continue;
+                }
+                int a2 = arr[j] * arr[j];
+                int b2 = arr[k] * arr[k];
+
+                if (a2 + b2 == c2) {
+                    triplets.add(new int[]{arr[i], arr[j], arr[k]});
+                    break;
+                } else if (a2 + b2 + (-c2) > 0) {
+                    k -= 1;
+                } else {
+                    j += 1;
                 }
             }
         }
