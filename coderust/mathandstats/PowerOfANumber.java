@@ -12,10 +12,10 @@ package mathandstats;
 public class PowerOfANumber {
 
     public static void main(String[] args) {
-        System.out.println("power (2, 5): " + power(2, 5));
-        System.out.println("power (3, 4) : " + power(3, 4));
-        System.out.println("power  (1.5, 3): " + power(1.5, 3));
-        System.out.println("power (2, -2) : " + power(2, -2));
+        System.out.println("power(2,5): " + power(2, 5));
+        System.out.println("power(3,4): " + power(3, 4));
+        System.out.println("power(1.5,3): " + power(1.5, 3));
+        System.out.println("power(2,-2): " + power(2, -2));
     }
 
     private static double powerRec(double x, int n) {
