@@ -64,5 +64,4 @@ public class BinaryTreeNode<T> {
         this.right = right;
     }
 
-
 }
