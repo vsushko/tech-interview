@@ -2,7 +2,7 @@ package common;
 
 public class BinaryTreeNode<T> {
     public T data;
-    public BinaryTreeNode<T> parent, left, right;
+    public BinaryTreeNode<T> parent, left, right, next;
 
     public BinaryTreeNode() {
         this.data = null;
