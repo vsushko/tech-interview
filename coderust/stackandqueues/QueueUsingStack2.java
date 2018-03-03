@@ -5,10 +5,10 @@ import java.util.Stack;
 /**
  * Implement a queue using Stacks.
  * <p>
- * Solution #1
+ * Solution #2
  * Runtime Complexity:
- * - enqueue(): Constant, O(1).
- * - dequeue(): Linear, O(n).
+ * - enqueue(): Linear, O(n).
+ * - dequeue(): Constant, O(1).
  * Memory Complexity: Linear, O(n).
  */
 public class QueueUsingStack2 {
@@ -35,7 +35,13 @@ public class QueueUsingStack2 {
     }
 
     private void enqueue(int data) {
+        while (!stack1.isEmpty()) {
+            stack2.push(stack1.pop());
+        }
         stack1.push(data);
+        while (!stack2.isEmpty()) {
+            stack1.push(stack2.pop());
+        }
     }
 
     private boolean isEmpty() {
@@ -46,12 +52,7 @@ public class QueueUsingStack2 {
         if (isEmpty()) {
             throw new Exception("queue is empty");
         }
-        if (stack2.isEmpty()) {
-            while (!stack1.isEmpty()) {
-                stack2.push(stack1.pop());
-            }
-        }
-        return stack2.pop();
+        return stack1.pop();
     }
 
     private void printStack() {
@@ -64,5 +65,4 @@ public class QueueUsingStack2 {
         }
         System.out.println();
     }
-
 }
