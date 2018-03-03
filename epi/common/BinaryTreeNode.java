@@ -4,6 +4,7 @@ public class BinaryTreeNode<T> {
     public T data;
     public BinaryTreeNode<T> parent, left, right, next;
     public int count;
+    public BinaryTreeNode root;
 
     public BinaryTreeNode() {
         this.data = null;
