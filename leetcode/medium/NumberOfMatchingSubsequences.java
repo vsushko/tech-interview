@@ -1,6 +1,8 @@
 package medium;
 
-
+/**
+ * 792. Number of Matching Subsequences
+ */
 public class NumberOfMatchingSubsequences {
 
     public static void main(String[] args) {
