@@ -6,9 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-interface Token {
-    boolean isOperator();
-}
 
 /**
  * Given an arithmetic expression, evaluate it.
@@ -21,6 +18,11 @@ interface Token {
  * Memory Complexity: Linear, O(n).
  */
 public class ExpressionEvaluation1 {
+
+    public static void main(String[] args) {
+        String expression = "3+6*5-1/2.5";
+        System.out.println(evaluate(expression));
+    }
 
     private static boolean isOperator(char temp) {
         return temp == '+' || temp == '-' || temp == '*' || temp == '/';
@@ -133,57 +135,5 @@ public class ExpressionEvaluation1 {
 
     private static double evaluate(String expr) {
         return evaluate(convertToPostfix(expr));
-    }
-}
-
-class TokenOperator implements Token {
-
-    private char mValue;
-
-    public TokenOperator() {
-        mValue = 0;
-    }
-
-    public TokenOperator(char mValue) {
-        this.mValue = mValue;
-    }
-
-    public char getmValue() {
-        return mValue;
-    }
-
-    public void setmValue(char mValue) {
-        this.mValue = mValue;
-    }
-
-    @Override
-    public boolean isOperator() {
-        return false;
-    }
-}
-
-class TokenOperand implements Token {
-
-    private double mValue;
-
-    public TokenOperand() {
-        mValue = 0;
-    }
-
-    public TokenOperand(double mValue) {
-        this.mValue = mValue;
-    }
-
-    public double getmValue() {
-        return mValue;
-    }
-
-    public void setmValue(double mValue) {
-        this.mValue = mValue;
-    }
-
-    @Override
-    public boolean isOperator() {
-        return false;
     }
 }

@@ -1,4 +1,5 @@
 package stackandqueues;
 
-public interface Token {
+interface Token {
+    boolean isOperator();
 }
