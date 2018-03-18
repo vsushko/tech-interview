@@ -9,8 +9,12 @@ public class FindSumOfTwo {
         int[] A = new int[]{5, 7, 1, 2, 8, 4, 3};
         System.out.println(findSumOfTwo(A, 10));
 
-        int[] B = new int[]{1, 3, 4, 5, 7, 14, 15};
-        System.out.println(findSumOfTwo2(B, 11));
+        A = new int[]{1, 3, 4, 5, 7, 14, 15};
+        System.out.println(findSumOfTwo2(A, 11));
+
+        A = new int[]{3, 2, 4};
+        // TODO: LOL
+        System.out.println(findSumOfTwo2(A, 6));
     }
 
     private static boolean findSumOfTwo(int[] A, int val) {
