@@ -1,7 +1,8 @@
+package primitivetypes;
+
 import java.util.Random;
 
 public class ReverseInteger {
-    // @include
     public static long reverse(int x) {
         long result = 0;
         long xRemaining = Math.abs(x);
@@ -11,7 +12,6 @@ public class ReverseInteger {
         }
         return x < 0 ? -result : result;
     }
-    // @exclude
 
     private static long checkAns(int x) {
         String s = String.valueOf(x);
