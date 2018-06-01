@@ -45,7 +45,7 @@ public class ImplementLRUCache {
         LinkedListNode node = cache.get(key);
         if (node == null) {
             evictIfNeeded();
-            node = new LinkedListNode(key, value);
+            // node = new LinkedListNode(key, value);
             cacheVals.appendToTail(node);
             cache.put(key, node);
         } else {

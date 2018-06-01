@@ -13,7 +13,7 @@ import utilities.LinkedListUtils;
 public class ReverseEvenNodes {
 
     public static void main(String[] args) {
-        LinkedListNode<Integer> node5 = new LinkedListNode<>(9, null);
+        LinkedListNode<Integer> node5 = new LinkedListNode(9, null);
         LinkedListNode<Integer> node4 = new LinkedListNode<>(28, node5);
         LinkedListNode<Integer> node3 = new LinkedListNode<>(21, node4);
         LinkedListNode<Integer> node2 = new LinkedListNode<>(14, node3);

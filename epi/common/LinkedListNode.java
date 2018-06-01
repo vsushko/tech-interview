@@ -18,10 +18,6 @@ public class LinkedListNode<T> {
         this.next = next;
     }
 
-    public LinkedListNode(int key, T data) {
-        this.data = data;
-    }
-
     public void appendToTail(T data) {
         LinkedListNode<T> node = new LinkedListNode<>(data);
         LinkedListNode<T> current = this;
