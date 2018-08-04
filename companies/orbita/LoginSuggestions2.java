@@ -12,10 +12,9 @@ public class LoginSuggestions2 {
     private static Map<String, Integer> repo = new HashMap<>();
 
     public static void main(String[] args) {
-        Collection<String> namesList =
-                Arrays.asList("ffdse3e5", "aba3ab", "aba3ab", "asdf2", "aba3ab", "ffdse3e5", "aba3ab");
-        // generate new suggestions
-        generateSuggestions(namesList);
+        // generates new suggestions
+        generateSuggestions(Arrays.asList("ffdse3e5", "aba3ab", "aba3ab",
+                "asdf2", "aba3ab", "ffdse3e5", "aba3ab"));
         // print
         repo.forEach((key, value) -> System.out.println("Key: " + key + " Value: " + value));
     }
