@@ -6,7 +6,6 @@ import java.util.*;
  * @author vsuhko
  */
 public class LoginSuggestions {
-
     private static Map<String, Integer> repo = new HashMap<>();
 
     public static void main(String[] args) {
@@ -36,5 +35,4 @@ public class LoginSuggestions {
         }
         return suggestions;
     }
-
 }
