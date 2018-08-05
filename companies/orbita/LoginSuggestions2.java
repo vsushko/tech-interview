@@ -20,9 +20,9 @@ public class LoginSuggestions2 {
     }
 
     private static void generateSuggestions(Collection<String> strings) {
-        for (String name : strings) {
-            int count = repo.getOrDefault(name, 0) + 1;
-            repo.put(name, count);
-        }
+        strings.forEach(s -> {
+            int count = repo.getOrDefault(s, 0) + 1;
+            repo.put(s, count);
+        });
     }
 }
