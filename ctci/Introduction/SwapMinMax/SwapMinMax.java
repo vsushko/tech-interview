@@ -1,6 +1,6 @@
 package SwapMinMax;
 
-import CtCILibrary.AssortedMethods;
+import library.AssortedMethods;
 
 public class SwapMinMax {
 	
