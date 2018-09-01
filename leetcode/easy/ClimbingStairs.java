@@ -10,8 +10,10 @@ public class ClimbingStairs {
     public static void main(String[] args) {
         System.out.println("2=" + climbStairsRecBF(2));
         System.out.println("2=" + climbStairsRecMem(2));
+        System.out.println("2=" + climbStairsDP(2));
         System.out.println("3=" + climbStairsRecBF(3));
         System.out.println("3=" + climbStairsRecMem(3));
+        System.out.println("3=" + climbStairsDP(3));
     }
 
     /**
@@ -60,4 +62,21 @@ public class ClimbingStairs {
         return memo[i];
     }
 
+    /**
+     * Approach 3: Dynamic Programming
+     * Time complexity: O(n), single loop up to n
+     * Space complexity: O(n), dp array of size n is used
+     */
+    private static int climbStairsDP(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        int[] dp = new int[n + 1];
+        dp[1] = 1;
+        dp[2] = 2;
+        for (int i = 3; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+        return dp[n];
+    }
 }
