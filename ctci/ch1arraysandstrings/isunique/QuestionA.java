@@ -1,15 +1,17 @@
-package ch1arraysandstrings.Q1_01_Is_Unique;
+package ch1arraysandstrings.isunique;
 
 public class QuestionA {
     public static boolean isUniqueChars(String str) {
         if (str.length() > 128) {
             return false;
         }
-        boolean[] char_set = new boolean[128];
+        boolean[] charSet = new boolean[128];
         for (int i = 0; i < str.length(); i++) {
             int val = str.charAt(i);
-            if (char_set[val]) return false;
-            char_set[val] = true;
+            if (charSet[val]) {
+                return false;
+            }
+            charSet[val] = true;
         }
         return true;
     }

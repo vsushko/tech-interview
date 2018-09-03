@@ -1,4 +1,4 @@
-package ch1arraysandstrings.Q1_01_Is_Unique;
+package ch1arraysandstrings.isunique;
 
 public class Tester {
 	
