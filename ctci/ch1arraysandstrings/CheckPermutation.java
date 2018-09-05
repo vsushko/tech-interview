@@ -1,7 +1,18 @@
-package ch1arraysandstrings.checkpermutation;
+package ch1arraysandstrings;
 
-public class QuestionB {
-    public static boolean permutation(String s, String t) {
+public class CheckPermutation {
+
+    public static String sort(String s) {
+        char[] content = s.toCharArray();
+        java.util.Arrays.sort(content);
+        return new String(content);
+    }
+
+    public static boolean permutation1(String s, String t) {
+        return sort(s).equals(sort(t));
+    }
+
+    public static boolean permutation2(String s, String t) {
         // Permutations must be same length
         if (s.length() != t.length()) {
             return false;
@@ -26,10 +37,18 @@ public class QuestionB {
 
     public static void main(String[] args) {
         String[][] pairs = {{"apple", "papel"}, {"carrot", "tarroc"}, {"hello", "llloh"}};
+
         for (String[] pair : pairs) {
             String word1 = pair[0];
             String word2 = pair[1];
-            boolean anagram = permutation(word1, word2);
+            boolean anagram = permutation1(word1, word2);
+            System.out.println(word1 + ", " + word2 + ": " + anagram);
+        }
+
+        for (String[] pair : pairs) {
+            String word1 = pair[0];
+            String word2 = pair[1];
+            boolean anagram = permutation2(word1, word2);
             System.out.println(word1 + ", " + word2 + ": " + anagram);
         }
     }
