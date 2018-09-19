@@ -10,8 +10,8 @@ import java.util.Arrays;
 public class MergeSortedArray {
 
     public static void main(String[] args) {
-        int[] nums1 = new int[]{1,2,3,0,0,0};
-        int[] nums2 = new int[]{2,5,6};
+        int[] nums1 = new int[]{1, 2, 3, 0, 0, 0};
+        int[] nums2 = new int[]{2, 5, 6};
         int m = 3;
         int n = 3;
         System.out.println("Expected: [1, 2, 2, 3, 5, 6]");
