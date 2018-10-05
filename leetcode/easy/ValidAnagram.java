@@ -16,6 +16,8 @@ public class ValidAnagram {
         System.out.println(isAnagram3(s, t));
         System.out.println(isAnagram4(s, t));
         System.out.println(isAnagram5(s, t));
+        System.out.println(isAnagram6(s, t));
+        System.out.println(isAnagram7(s, t));
         s = "rat";
         t = "car";
         System.out.println(isAnagram1(s, t));
@@ -23,6 +25,8 @@ public class ValidAnagram {
         System.out.println(isAnagram3(s, t));
         System.out.println(isAnagram4(s, t));
         System.out.println(isAnagram5(s, t));
+        System.out.println(isAnagram6(s, t));
+        System.out.println(isAnagram7(s, t));
     }
 
     /**
@@ -131,7 +135,7 @@ public class ValidAnagram {
     /**
      * 2ms
      */
-    public boolean isAnagram6(String s, String t) {
+    private static boolean isAnagram6(String s, String t) {
         int[] cc = new int[256];
         for (char c : s.toCharArray()) {
             cc[c]++;
@@ -150,7 +154,7 @@ public class ValidAnagram {
     /**
      * 1ms
      */
-    public boolean isAnagram7(String s, String t) {
+    private static boolean isAnagram7(String s, String t) {
         if (s == null || t == null) {
             return false;
         }
