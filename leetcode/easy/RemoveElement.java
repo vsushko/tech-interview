@@ -12,10 +12,12 @@ public class RemoveElement {
         int val = 3;
         System.out.println(removeElementTP(array, val));
         System.out.println(removeElementRR(array, val));
+        System.out.println(removeElement3(array, val));
         array = new int[]{0, 1, 2, 2, 3, 0, 4, 2};
         val = 2;
         System.out.println(removeElementTP(array, val));
         System.out.println(removeElementRR(array, val));
+        System.out.println(removeElement3(array, val));
     }
 
     /**
@@ -58,5 +60,29 @@ public class RemoveElement {
             }
         }
         return n;
+    }
+
+    /**
+     * We need to have two indices (fast and slow) and iterate through the array elements to check if the elements
+     * pointed by the fast index is same as the given value. If different, replace the slow index value with the fast
+     * index value. If the values are same, skip it and move to the fast index to the next element.
+     * When the fast element reaches the end, return the slow value as the number of elements in the resulting array.
+     *
+     * Time complexity: O(n), where n is the size of array
+     * Space complexity: O(1), this algorithm usees a constant extra space
+     */
+    private static int removeElement3(int[] nums, int val) {
+        if (nums.length == 0) {
+            return 0;
+        }
+
+        int slow = 0;
+
+        for (int fast = 0; fast < nums.length; fast++){
+            if (nums[fast] != val) {
+                nums[slow++] = nums[fast];
+            }
+        }
+        return slow;
     }
 }
